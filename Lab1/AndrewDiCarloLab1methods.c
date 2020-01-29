@@ -8,7 +8,7 @@ void displayBits(unsigned int n)
 
     for (mask = 1 << maskLen; mask > 0; mask = mask >> 1) {
         printf("%d", mask & n);
-        if (!(mask % 8)) {
+        if (!(mask % 8)) { // Prints out spaces every time, needs to be changed
             printf(" ");
         }
     }
