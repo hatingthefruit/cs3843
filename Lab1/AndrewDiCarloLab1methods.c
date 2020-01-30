@@ -48,7 +48,7 @@ int isPowerOfTwo(unsigned int n)
 {
     // Check the result of an AND operation between n and n - 1
     // It should evaluate to 0 if n is a power of 2, and non-zero if n is not
-    if (n & (n - 1)) {
+    if (n & (n - 1) || n == 0) {
         return 0;
     }
     else {
@@ -57,9 +57,32 @@ int isPowerOfTwo(unsigned int n)
 }
 int getNoBits(unsigned int a, unsigned int b)
 {
-    return 32;
+    // XOR to find the bits that need to be changed between the two
+    // Start a counter
+    unsigned int diff = a ^ b;
+    int count = 0;
+
+    // Check that diff is greater than 0
+    while (diff > 0) {
+
+        // If there is a 1 in the 1st bit, increment count
+        if ((diff & 1) == 1) {
+            count++;
+        }
+
+        // shift diff to the right 1
+        diff = diff >> 1;
+    }
+    return count;
 }
 unsigned int computeXor(unsigned int n)
 {
-    return n;
+    unsigned int val = 0;
+    unsigned int i = 1;
+    while (i < n) {
+        val = val ^ i;
+        i++;
+    }
+    val = val ^ n;
+    return val;
 }
