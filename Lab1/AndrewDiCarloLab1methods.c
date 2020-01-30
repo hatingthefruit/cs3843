@@ -46,7 +46,14 @@ unsigned int setKthBit(unsigned int n, int k)
 }
 int isPowerOfTwo(unsigned int n)
 {
-    return n;
+    // Check the result of an AND operation between n and n - 1
+    // It should evaluate to 0 if n is a power of 2, and non-zero if n is not
+    if (n & (n - 1)) {
+        return 0;
+    }
+    else {
+        return 1;
+    }
 }
 int getNoBits(unsigned int a, unsigned int b)
 {
