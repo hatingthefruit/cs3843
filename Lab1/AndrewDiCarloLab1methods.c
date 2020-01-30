@@ -77,12 +77,17 @@ int getNoBits(unsigned int a, unsigned int b)
 }
 unsigned int computeXor(unsigned int n)
 {
+    // Start val at 0 and i at 1
     unsigned int val = 0;
     unsigned int i = 1;
+
+    // Loop through every number and XOR i with val
     while (i < n) {
         val = val ^ i;
         i++;
     }
+
+    // Finally, XOR val with n and return val
     val = val ^ n;
     return val;
 }
