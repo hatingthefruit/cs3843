@@ -1,4 +1,15 @@
-#include "Lab1.h"
+/*
+Author: Andrew DiCarlo
+Assignment Number: Lab Assignment 1
+File Name: AndrewDiCarloLab1methods.c
+Course/Section: CS 3843 Section 003
+Due Date: 19 Feb 2019
+Instructor: Dr. Ku
+
+Fun
+*/
+
+//#include "Lab1.h"
 #include <stdio.h>
 
 void displayBits(unsigned int n)
@@ -77,17 +88,13 @@ int getNoBits(unsigned int a, unsigned int b)
 }
 unsigned int computeXor(unsigned int n)
 {
-    // Start val at 0 and i at 1
-    unsigned int val = 0;
-    unsigned int i = 1;
-
-    // Loop through every number and XOR i with val
-    while (i < n) {
-        val = val ^ i;
-        i++;
+    // If you XOR consecutive numbers starting at 1, then there is a pattern
+    // Depending on the result of n % 4, the output can be predicted as either n, 1, n + 1, or 0
+    // We can use this to predict the values more easily
+    switch (n % 4) {
+        case 0: return n;
+        case 1: return 1;
+        case 2: return n + 1;
+        case 3: return 0;
     }
-
-    // Finally, XOR val with n and return val
-    val = val ^ n;
-    return val;
 }
