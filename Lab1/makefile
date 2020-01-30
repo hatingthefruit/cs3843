@@ -8,7 +8,7 @@ all: $(TARGET)
 	./Lab1 > test.out
 	diff test.out Lab1.out
 
-$(TARGET):
+$(TARGET): AndrewDiCarloLab1methods.c Lab1main.c
 	$(CC) $(CFLAGS) Lab1main.c AndrewDiCarloLab1methods.c -o $(TARGET) 
 
 clean:

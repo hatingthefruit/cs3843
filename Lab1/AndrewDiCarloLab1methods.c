@@ -6,7 +6,11 @@ Course/Section: CS 3843 Section 003
 Due Date: 19 Feb 2019
 Instructor: Dr. Ku
 
-Fun
+Functions to complete bitwise operations on numbers
+Can be automatically built, run, and compared by running make
+
+Alternately, the command to compile is:
+gcc -g -Wall Lab1main.c AndrewDiCarloLab1methods.c -o Lab1
 */
 
 //#include "Lab1.h"
