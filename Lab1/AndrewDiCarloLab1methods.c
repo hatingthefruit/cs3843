@@ -16,6 +16,8 @@ gcc -g -Wall Lab1main.c AndrewDiCarloLab1methods.c -o Lab1
 //#include "Lab1.h"
 #include <stdio.h>
 
+// Displays an unsigned integer in bits
+// Prints a space after every 8 bits
 void displayBits(unsigned int n)
 {
     int maskLen = (8 * sizeof(n)) - 1;
@@ -41,6 +43,9 @@ void displayBits(unsigned int n)
     }
     printf("\n");
 }
+
+// Set the Kth bit from the right of an unsigned integer to be 1
+// Uses bit shifts on a mask and a bitwise OR to set the proper bit
 unsigned int setKthBit(unsigned int n, int k)
 {
     // If user tries to set a bit that is not in a 32 bit int, then just return the original number
@@ -59,6 +64,9 @@ unsigned int setKthBit(unsigned int n, int k)
         return n | mask;
     }
 }
+
+// Check if a number is a power of 2
+// Does this by performing a bitwise AND of n and n-1
 int isPowerOfTwo(unsigned int n)
 {
     // Check the result of an AND operation between n and n - 1
@@ -70,6 +78,10 @@ int isPowerOfTwo(unsigned int n)
         return 1;
     }
 }
+
+// Function that finds the number of bits that need to be changed to convert one number into another number
+// Takes two unsigned integers, a and b, and finds the bits that are different using XOR
+// Counts the number of bits that are equal to 1, which are the same as the number of bits that are different
 int getNoBits(unsigned int a, unsigned int b)
 {
     // XOR to find the bits that need to be changed between the two
@@ -90,6 +102,9 @@ int getNoBits(unsigned int a, unsigned int b)
     }
     return count;
 }
+
+// Function takes an unsigned int n and computes the xor of every number from 1 to n
+// Uses a pattern that repeats every 4 numbers to simplify calculations
 unsigned int computeXor(unsigned int n)
 {
     // If you XOR consecutive numbers starting at 1, then there is a pattern
