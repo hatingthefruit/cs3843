@@ -7,7 +7,7 @@ Due Date: 19 Feb 2019
 Instructor: Dr. Ku
 
 Functions to complete bitwise operations on numbers
-Can be automatically built, run, and compared by running make
+A makefile is being included that will automatically build, run the program, and redirect the output
 
 Alternately, the command to compile is:
 gcc -g -Wall Lab1main.c AndrewDiCarloLab1methods.c -o Lab1
