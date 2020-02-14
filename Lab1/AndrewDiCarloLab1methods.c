@@ -100,5 +100,8 @@ unsigned int computeXor(unsigned int n)
         case 1: return 1;
         case 2: return n + 1;
         case 3: return 0;
+
+        // Should never reach this point, but the compiler will throw warnings without this
+        default: return 0;
     }
 }
