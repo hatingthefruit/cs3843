@@ -1,5 +1,11 @@
-int sum(int x, int y)
+#include <stdio.h>
+
+int main(void)
 {
-    int t = x + y;
-    return t;
+    int x = 1;
+    int y = 3;
+
+    printf("%d\n", x + y);
+
+    return 0;
 }
