@@ -1,3 +1,15 @@
+/*
+Author: Andrew DiCarlo
+Assignment Number: Lab 2
+File Name: lab2b.c
+Course/Section: CS 3843 Section 003
+Due Date: 02 Mar 2020
+Instructor: Dr. Ku
+
+Contains the modified code to complete the requirements of lab 2
+*/
+
+
 #include <stdio.h>
 #include <string.h>
 #define MAX 10
@@ -31,7 +43,19 @@ int readArray(int arr[], int limit) {
 }
 
 void reverseArray(int arr[], size_t size) {
-  // complete the function body
+    int *end, *start;
+    int temp;
+    start = arr;
+    end = &arr[size - 1];
+    
+    while(start < end){
+        temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+    
 }
 
 void printArray(int arr[], int size) {
